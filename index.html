@@ -2046,4 +2046,110 @@ function atShowFeatureDetail(p){const d=document.getElementById('atPlantDetail')
 function atRunFeatureQuery(){const q=document.getElementById('atPlantQuery').value.trim();if(!q){document.getElementById('atPlantStatus').textContent='請先輸入植物名稱或特徵';return}atRenderFeatureResults(atFeatureSearchPlants(q),q)}
 document.getElementById('atPlantSearchBtn').addEventListener('click',atRunFeatureQuery);document.getElementById('atPlantQuery').addEventListener('keydown',e=>{if(e.key==='Enter')atRunFeatureQuery()});document.getElementById('atPlantResetBtn').addEventListener('click',()=>{document.getElementById('atPlantQuery').value='';document.getElementById('atPlantResults').innerHTML='';document.getElementById('atPlantDetail').style.display='none';document.getElementById('atPlantStatus').textContent='等待查詢';document.getElementById('atPlantQuery').focus()});
 </script>
+
+<!-- Privacy & Rights Center: required first-entry consent -->
+<div id="privacyConsentModal" class="privacy-consent-modal" role="dialog" aria-modal="true" aria-labelledby="privacyConsentTitle">
+  <div class="privacy-consent-card">
+    <div class="privacy-consent-head">
+      <span class="privacy-badge">A.T</span>
+      <div>
+        <h2 id="privacyConsentTitle">隱私設定與權益中心</h2>
+        <p>首次進入 A.T 前，請閱讀以下使用說明並完成必要勾選。</p>
+      </div>
+    </div>
+    <div class="privacy-consent-body">
+      <section>
+        <h3>一、A.T 使用說明</h3>
+        <p>A.T 是整合聊天、資料查詢、雙語轉換、工具與植物特徵查詢等功能的網頁應用。進入 A.T 後，可以從頁面導覽選擇需要的功能；一般問題可直接在聊天區輸入文字並送出，若問題需要資料查詢，系統會依目前可用的資料來源與功能進行處理。</p>
+        <ul>
+          <li><strong>聊天：</strong>輸入想詢問或討論的內容，A.T 會依目前可用的回應能力進行回答。</li>
+          <li><strong>提問／資料查詢：</strong>適合需要查找資料、整理資訊或取得來源的問題；查詢結果應以頁面顯示的資料來源為準。</li>
+          <li><strong>雙語功能：</strong>可進行日常中文與英文互轉；文法教學用於解釋句型、文法與使用方式，不等同於單純翻譯。</li>
+          <li><strong>特徵查詢：</strong>以植物名稱或文字特徵進行查詢，例如「葉子有洞」、「耐陰」、「紅色花」等；目前此功能採純文字查詢，不需要上傳照片或開啟相機。</li>
+          <li><strong>設定：</strong>可查看與調整可用的隱私、權限及相關功能設定。</li>
+        </ul>
+        <p class="privacy-note">A.T 的實際功能會依目前網頁版本、瀏覽器權限、網路狀態與已啟用的服務而定；如果某項功能需要額外權限，系統會在使用前提示。</p>
+      </section>
+      <section>
+        <h3>二、我們如何處理資料</h3>
+        <p>A.T 以提供日常陪伴、資訊查詢、植物特徵查詢、雙語轉換與工具功能為目的。一般對話內容僅用於目前對話的回應；若網站啟用記憶功能，會以獨立的記憶設定管理，不會與私人日記或其他私密資料混用。</p>
+      </section>
+      <section>
+        <h3>三、權限與使用者控制</h3>
+        <p>需要裝置權限的功能會在使用前明確提示，例如語音輸入、通知等。你可以隨時在設定頁調整權限或停止使用相關功能。</p>
+      </section>
+      <section>
+        <h3>四、目前實際使用的 AI 技術與模型狀態</h3>
+        <p><strong>請特別注意：依目前這份 A.T.HTML 的實際程式碼，網站沒有直接呼叫 OpenAI、ChatGPT、Claude、Gemini、DeepSeek、Llama 等生成式大型語言模型 API。</strong> 目前的聊天路由、時間、計算、提醒與植物特徵查詢主要由本機 JavaScript 規則、內建資料與比對邏輯處理；因此不能把本版本宣稱成「使用某一個特定 LLM」。</p>
+        <ul>
+          <li><strong>A.T 本機規則引擎：</strong>以 JavaScript 關鍵詞、路由規則與內建回應邏輯處理部分聊天情境。</li>
+          <li><strong>植物特徵查詢引擎：</strong>使用 HTML 內建植物資料、名稱與特徵標籤進行文字比對與排序。</li>
+          <li><strong>雙語功能：</strong>先使用 A.T 內建詞句對照；沒有本機結果時，才呼叫 MyMemory 公開翻譯服務。</li>
+          <li><strong>公開資料查詢：</strong>不是 LLM 生成答案，而是從公開搜尋／百科來源取得資料後整理顯示。</li>
+        </ul>
+        <p class="privacy-note"><strong>模型狀態：</strong>目前 A.T.HTML 沒有直接部署或呼叫特定生成式大型語言模型，因此本版本不應標示為「使用 GPT-5.6、Claude、Gemini、DeepSeek 或其他特定 LLM」。未來若正式接入模型，將在此處更新實際模型名稱、提供者、用途，以及使用者輸入是否會傳送至外部服務。</p>
+         <p class="privacy-note"><strong>可整合性：</strong>OpenAI 官方 API 目前提供 GPT-5.6 Sol、GPT-5.6 Terra 與 GPT-5.6 Luna，並可透過 Responses API 等方式整合到網站服務；這代表 A.T 未來可以進行模型串接，但不代表目前這份 HTML 已經使用這些模型。</p>
+      </section>
+      <section>
+        <h3>五、目前版本的所有主要資料來源與外部服務</h3>
+        <ul>
+          <li><strong>DuckDuckGo Instant Answer API：</strong>用於一般公開資訊搜尋與公開摘要。</li>
+          <li><strong>Wikipedia API：</strong>使用中文維基百科或英文 Wikipedia 的公開百科內容作為查詢來源。</li>
+          <li><strong>MyMemory Translation API：</strong>僅在 A.T 本機雙語詞句輔助沒有足夠結果時，用於中文／英文翻譯。</li>
+          <li><strong>中央氣象署開放資料入口：</strong>提供公開天氣、觀測與預報資料入口；目前此 HTML 的「公開資料」區塊主要提供官方網站連結。</li>
+          <li><strong>政府資料開放平臺 data.gov.tw：</strong>政府公開資料入口，目前主要以官方連結方式提供。</li>
+          <li><strong>我的 E 政府 gov.tw：</strong>政府服務與公開資訊入口，目前主要以官方連結方式提供。</li>
+          <li><strong>植物公開資料：</strong>植物特徵查詢使用本網站內建的植物名稱、特徵、季節、澆水與照護資料及文字比對邏輯。</li>
+        </ul>
+        <p class="privacy-note">以上是目前這份 HTML 原始碼中實際可確認的主要資料來源／外部服務。A.T 不會把「公開網站連結」冒充成已直接取得的 API 資料；實際查詢時會在結果區顯示來源。</p>
+      </section>
+      <section>
+        <h3>六、語音與資料使用方式（請務必閱讀）</h3>
+        <p><strong>語音輸入：</strong>你按下「語音」後，A.T 會要求瀏覽器提供麥克風權限，並使用瀏覽器的 Speech Recognition／webkitSpeechRecognition 將你說的內容轉成文字。A.T 網頁本身不會把錄音檔寫入 localStorage 或 sessionStorage，也沒有在目前程式碼中建立語音檔案上傳功能。</p>
+        <p><strong>但語音辨識是否由裝置本機完成，取決於瀏覽器的實作。</strong>目前 A.T 只能控制瀏覽器提供的語音辨識介面，無法保證所有瀏覽器都在本機處理音訊；某些瀏覽器可能將語音送往其語音辨識服務。因此，首次使用語音前，請確認你所使用瀏覽器的麥克風與語音辨識資料政策。</p>
+        <p><strong>語音回覆：</strong>A.T 使用瀏覽器 Speech Synthesis 將文字轉成語音。A.T 目前沒有把語音回覆錄製成檔案或上傳到伺服器的程式。</p>
+        <h4>資料會去哪裡？</h4>
+        <ul>
+          <li><strong>一般聊天：</strong>目前主要由網頁內的 JavaScript 規則與內建資料處理；本版本沒有直接把一般聊天送到 OpenAI、ChatGPT、Claude、Gemini 或 DeepSeek 等 LLM API。</li>
+          <li><strong>公開資料查詢：</strong>當你要求公開資訊查詢時，查詢文字會送往程式碼中使用的 DuckDuckGo Instant Answer API 與 Wikipedia API，以取得公開資料與來源。</li>
+          <li><strong>中文／英文翻譯：</strong>本機詞句沒有足夠結果時，輸入文字會送往 MyMemory Translation API 進行翻譯。</li>
+          <li><strong>植物特徵查詢：</strong>目前使用網頁內建的植物資料與文字特徵比對，不需要上傳照片。</li>
+          <li><strong>本機資料：</strong>主題、搜尋紀錄、待辦事項、購物清單、筆記、提醒、習慣與部分雙語紀錄會使用瀏覽器 localStorage／sessionStorage 保存；清除瀏覽器網站資料或使用網站提供的清除功能可移除這些資料。</li>
+          <li><strong>通知：</strong>只有在你主動授權瀏覽器通知後，A.T 才會使用 Notification API 發送提醒。</li>
+          <li><strong>網路／電池狀態：</strong>online／Battery API 只用於介面狀態與功能判斷，不作為身份辨識資料。</li>
+        </ul>
+        <p class="privacy-note"><strong>請不要輸入你不希望被第三方服務處理的敏感、機密或個人資料。</strong>尤其使用公開搜尋、翻譯或瀏覽器語音辨識時，相關輸入可能依各服務提供者的資料政策被處理。A.T 不應把「瀏覽器語音辨識」描述成百分之百離線，也不應把公開 API 描述成完全不傳送資料。</p>
+      </section>
+      <section>
+        <h3>七、使用者權益</h3>
+        <p>你有權了解本網站如何使用資料、查看資料來源、調整權限設定、匯出或清除本機保存的生活資料，以及停止使用需要授權的功能。網站不會因你拒絕非必要權限而強制開啟相關功能。</p>
+      </section>
+    </div>
+    <div class="privacy-checks">
+      <label><input type="checkbox" id="privacyCheck1"> 我已閱讀並了解 A.T 的使用說明與各項功能用途。</label>
+      <label><input type="checkbox" id="privacyCheck2"> 我已閱讀並了解 A.T 的隱私設定與資料處理方式。</label>
+      <label><input type="checkbox" id="privacyCheck3"> 我已閱讀並了解目前實際使用的 AI 技術、模型狀態、資料來源與外部服務說明。</label>
+      <label><input type="checkbox" id="privacyCheck4"> 我同意依上述說明使用 A.T，並了解可隨時於設定頁調整相關權限。</label>
+    </div>
+    <div class="privacy-actions">
+      <button id="privacyContinueBtn" disabled>同意並進入 A.T</button>
+    </div>
+  </div>
+</div>
+<style>
+.privacy-consent-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(46,40,34,.48);backdrop-filter:blur(6px)}
+.privacy-consent-card{width:min(760px,96vw);max-height:92vh;overflow:auto;background:#f7f3ed;border:1px solid #d9cfc2;border-radius:28px;box-shadow:0 28px 80px rgba(0,0,0,.28);padding:26px;color:#4b443d}
+.privacy-consent-head{display:flex;gap:16px;align-items:center;border-bottom:1px solid #ded4c8;padding-bottom:18px}.privacy-badge{display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:#e5ddd1;font-weight:800;font-size:22px}.privacy-consent-head h2{margin:0 0 6px;font-size:25px}.privacy-consent-head p{margin:0;color:#7b7268}.privacy-consent-body{display:grid;gap:16px;padding:18px 0}.privacy-consent-body h3{margin:0 0 7px;font-size:17px}.privacy-consent-body p,.privacy-consent-body li{line-height:1.75;color:#5f574f}.privacy-note{font-size:13px;background:#eee7dc;padding:10px 12px;border-radius:12px}.privacy-checks{display:grid;gap:12px;border-top:1px solid #ded4c8;padding-top:18px}.privacy-checks label{display:flex;gap:10px;align-items:flex-start;line-height:1.6}.privacy-checks input{margin-top:5px;accent-color:#8d6ac1}.privacy-actions{display:flex;justify-content:flex-end;padding-top:20px}.privacy-actions button{border:0;border-radius:16px;padding:14px 22px;font-weight:800;font-size:16px;background:#8d6ac1;color:#fff;cursor:pointer}.privacy-actions button:disabled{opacity:.45;cursor:not-allowed}@media(max-width:640px){.privacy-consent-card{padding:20px;border-radius:22px}.privacy-consent-head{align-items:flex-start}.privacy-consent-head h2{font-size:22px}}
+</style>
+<script>
+(function(){
+  const modal=document.getElementById('privacyConsentModal');
+  const checks=[document.getElementById('privacyCheck1'),document.getElementById('privacyCheck2'),document.getElementById('privacyCheck3'),document.getElementById('privacyCheck4')];
+  const btn=document.getElementById('privacyContinueBtn');
+  function update(){btn.disabled=!checks.every(c=>c.checked)}
+  checks.forEach(c=>c.addEventListener('change',update));
+  btn.addEventListener('click',function(){if(btn.disabled)return;modal.remove();});
+  update();
+})();
+</script>
 </body></html>
