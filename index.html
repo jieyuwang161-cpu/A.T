@@ -922,6 +922,7 @@ function setMascotStatus(text){const el=document.getElementById('mascotStatus');
 </div>
 <div aria-label="A.T 工具" class="at-tool-tabs" role="tablist">
 <button class="active" onclick="atToolTab('calc',this)">計算</button>
+<button onclick="atToolTab('calorie',this)">熱量</button>
 <button onclick="atToolTab('text',this)">文字</button>
 <button onclick="atToolTab('date',this)">日期</button>
 <button onclick="atToolTab('focus',this)">專注</button>
@@ -955,6 +956,76 @@ function setMascotStatus(text){const el=document.getElementById('mascotStatus');
 <div class="at-tool-result" id="atCalcResult">等待計算。</div>
 </div>
 <div class="at-tool-box"><h4>📏 單位換算</h4><p>先輸入數值，再自己選擇來源與目標單位。</p><input class="at-tool-input" id="atUnitInput" inputmode="decimal" placeholder="例如：2.5"/><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><select class="at-tool-input" id="atUnitFrom"><option value="km">公里 (km)</option><option value="m">公尺 (m)</option><option value="cm">公分 (cm)</option><option value="mm">毫米 (mm)</option><option value="kg">公斤 (kg)</option><option value="g">公克 (g)</option><option value="mg">毫克 (mg)</option><option value="l">公升 (L)</option><option value="ml">毫升 (mL)</option></select><select class="at-tool-input" id="atUnitTo"><option value="m">公尺 (m)</option><option value="km">公里 (km)</option><option value="cm">公分 (cm)</option><option value="mm">毫米 (mm)</option><option value="g">公克 (g)</option><option value="kg">公斤 (kg)</option><option value="mg">毫克 (mg)</option><option value="ml">毫升 (mL)</option><option value="l">公升 (L)</option></select></div><div class="at-tool-actions"><button class="primary" onclick="atConvert()">換算</button><button class="secondary" onclick="const a=document.getElementById('atUnitFrom'),b=document.getElementById('atUnitTo'),t=a.value;a.value=b.value;b.value=t;atConvert()">交換單位</button></div><div class="at-tool-result" id="atUnitResult">輸入數值並選擇兩個單位。</div></div>
+</div>
+</div>
+<div class="at-tool-panel" id="atTool-calorie">
+<div class="at-tool-box">
+<h4>食物熱量計算器</h4>
+<p>選擇食物、輸入份量，A.T 會依每 100 公克的估算值計算熱量，並可累計一餐總熱量。</p>
+<div class="at-tool-grid">
+<div>
+<label class="at-small" for="atCalFood">食物</label>
+<select class="at-tool-input" id="atCalFood">
+<option value="whiteRice">白飯</option>
+<option value="brownRice">糙米飯</option>
+<option value="purpleRice">紫米飯</option>
+<option value="oatmeal">燕麥粥</option>
+<option value="congee">白粥</option>
+<option value="noodle">麵條</option>
+<option value="riceNoodle">米粉</option>
+<option value="vermicelli">冬粉</option>
+<option value="udon">烏龍麵</option>
+<option value="ramen">拉麵</option>
+<option value="bread">吐司</option>
+<option value="croissant">可頌</option>
+<option value="steamedBun">饅頭</option>
+<option value="egg">雞蛋</option>
+<option value="chickenBreast">雞胸肉</option>
+<option value="chickenThigh">雞腿肉</option>
+<option value="pork">豬肉</option>
+<option value="beef">牛肉</option>
+<option value="fish">魚肉</option>
+<option value="salmon">鮭魚</option>
+<option value="tuna">鮪魚</option>
+<option value="shrimp">蝦仁</option>
+<option value="tofu">豆腐</option>
+<option value="tempeh">天貝</option>
+<option value="vegetables">綜合蔬菜</option>
+<option value="broccoli">花椰菜</option>
+<option value="corn">玉米</option>
+<option value="potato">馬鈴薯</option>
+<option value="sweetPotato">地瓜</option>
+<option value="pumpkin">南瓜</option>
+<option value="mushroom">菇類</option>
+<option value="banana">香蕉</option>
+<option value="apple">蘋果</option>
+<option value="orange">柳橙</option>
+<option value="watermelon">西瓜</option>
+<option value="grapes">葡萄</option>
+<option value="avocado">酪梨</option>
+<option value="milk">牛奶</option>
+<option value="soyMilk">無糖豆漿</option>
+<option value="yogurt">原味優格</option>
+<option value="cheese">起司</option>
+<option value="peanutButter">花生醬</option>
+<option value="almonds">杏仁</option>
+</select>
+</div>
+<div>
+<label class="at-small" for="atCalGrams">份量（公克）</label>
+<input class="at-tool-input" id="atCalGrams" inputmode="decimal" type="number" min="1" step="1" value="100" placeholder="例如：150"/>
+</div>
+</div>
+<div class="at-tool-result" id="atCalInfo">每 100 公克：約 130 kcal</div>
+<div class="at-tool-actions">
+<button class="primary" onclick="atAddCalorieFood()">加入餐點</button>
+<button class="secondary" onclick="atCalorieCalculate()">只計算</button>
+<button class="secondary" onclick="atClearCalories()">清除餐點</button>
+</div>
+<div class="at-tool-result" id="atCalResult">輸入份量後即可計算。</div>
+<ul class="at-checklist" id="atCalorieList"><li>尚未加入食物。</li></ul>
+<div class="at-tool-result" id="atCalorieTotal">目前總熱量：0 kcal</div>
+<div class="at-source-note">以上為常見食物的概略估算值，實際熱量會因品牌、烹調方式、部位與份量而不同。</div>
 </div>
 </div>
 <div class="at-tool-panel" id="atTool-text">
@@ -1036,6 +1107,7 @@ function setMascotStatus(text){const el=document.getElementById('mascotStatus');
     btn?.classList.add('active');
     if(name==='text')atTextStats();
     if(name==='date')atRefreshToday();
+    if(name==='calorie')atRefreshCalorieInfo();
   };
 
   window.atCalc=function(){
@@ -1063,6 +1135,96 @@ function setMascotStatus(text){const el=document.getElementById('mascotStatus');
     const base={km:1000,m:1,cm:.01,mm:.001,kg:1000,g:1,mg:.001,l:1000,ml:1},label={km:'km',m:'m',cm:'cm',mm:'mm',kg:'kg',g:'g',mg:'mg',l:'L',ml:'mL'};
     const result=n*base[from]/base[to]; $('atUnitResult').textContent='結果：'+Number(result.toPrecision(12))+' '+label[to];
   };
+
+  
+  const AT_CALORIE_FOODS={
+    whiteRice:{name:'白飯',kcal:130},
+    brownRice:{name:'糙米飯',kcal:123},
+    purpleRice:{name:'紫米飯',kcal:130},
+    oatmeal:{name:'燕麥粥',kcal:68},
+    congee:{name:'白粥',kcal:46},
+    noodle:{name:'麵條',kcal:138},
+    riceNoodle:{name:'米粉',kcal:110},
+    vermicelli:{name:'冬粉',kcal:87},
+    udon:{name:'烏龍麵',kcal:95},
+    ramen:{name:'拉麵',kcal:150},
+    bread:{name:'吐司',kcal:264},
+    croissant:{name:'可頌',kcal:406},
+    steamedBun:{name:'饅頭',kcal:223},
+    egg:{name:'雞蛋',kcal:143},
+    chickenBreast:{name:'雞胸肉',kcal:165},
+    chickenThigh:{name:'雞腿肉',kcal:209},
+    pork:{name:'豬肉',kcal:242},
+    beef:{name:'牛肉',kcal:250},
+    fish:{name:'魚肉',kcal:150},
+    salmon:{name:'鮭魚',kcal:208},
+    tuna:{name:'鮪魚',kcal:132},
+    shrimp:{name:'蝦仁',kcal:99},
+    tofu:{name:'豆腐',kcal:76},
+    tempeh:{name:'天貝',kcal:192},
+    vegetables:{name:'綜合蔬菜',kcal:35},
+    broccoli:{name:'花椰菜',kcal:34},
+    corn:{name:'玉米',kcal:86},
+    potato:{name:'馬鈴薯',kcal:77},
+    sweetPotato:{name:'地瓜',kcal:86},
+    pumpkin:{name:'南瓜',kcal:26},
+    mushroom:{name:'菇類',kcal:28},
+    banana:{name:'香蕉',kcal:89},
+    apple:{name:'蘋果',kcal:52},
+    orange:{name:'柳橙',kcal:47},
+    watermelon:{name:'西瓜',kcal:30},
+    grapes:{name:'葡萄',kcal:69},
+    avocado:{name:'酪梨',kcal:160},
+    milk:{name:'牛奶',kcal:61},
+    soyMilk:{name:'無糖豆漿',kcal:45},
+    yogurt:{name:'原味優格',kcal:59},
+    cheese:{name:'起司',kcal:402},
+    peanutButter:{name:'花生醬',kcal:588},
+    almonds:{name:'杏仁',kcal:579}
+  };
+  let atCalorieItems=[];
+  function atCalorieCurrent(){
+    const key=$('atCalFood')?.value;
+    const grams=Number($('atCalGrams')?.value);
+    const food=AT_CALORIE_FOODS[key];
+    if(!food||!Number.isFinite(grams)||grams<=0)return null;
+    return {key,name:food.name,grams,kcal:Math.round(food.kcal*grams/100*10)/10,per100:food.kcal};
+  }
+  function renderCalorieList(){
+    const box=$('atCalorieList'); if(!box)return;
+    if(!atCalorieItems.length){
+      box.innerHTML='<li>尚未加入食物。</li>';
+    }else{
+      box.innerHTML=atCalorieItems.map((x,i)=>'<li><span>'+escapeHtml(x.name)+' · '+x.grams+' g · '+x.kcal+' kcal</span><button class="secondary" onclick="atRemoveCalorieItem('+i+')">移除</button></li>').join('');
+    }
+    const total=atCalorieItems.reduce((sum,x)=>sum+x.kcal,0);
+    $('atCalorieTotal').textContent='目前總熱量：'+Math.round(total*10)/10+' kcal';
+  }
+  window.atCalorieCalculate=function(){
+    const x=atCalorieCurrent();
+    if(!x){$('atCalResult').textContent='請輸入有效的份量（大於 0 公克）。';return}
+    $('atCalResult').textContent=x.name+' '+x.grams+' g：約 '+x.kcal+' kcal。';
+  };
+  window.atAddCalorieFood=function(){
+    const x=atCalorieCurrent();
+    if(!x){$('atCalResult').textContent='請輸入有效的份量（大於 0 公克）。';return}
+    atCalorieItems.push(x);
+    $('atCalResult').textContent='已加入：'+x.name+' '+x.grams+' g，約 '+x.kcal+' kcal。';
+    renderCalorieList();
+  };
+  window.atRemoveCalorieItem=function(index){
+    atCalorieItems.splice(index,1);
+    renderCalorieList();
+  };
+  window.atClearCalories=function(){
+    atCalorieItems=[];
+    $('atCalResult').textContent='已清除餐點。';
+    renderCalorieList();
+  };
+  function atRefreshCalorieInfo(){
+    const key=$('atCalFood')?.value,food=AT_CALORIE_FOODS[key];
+    if(food)$('atCalInfo').textContent='每 100 公克：約 '+food.kcal+' kcal';
+  }
 
   window.atTextStats=function(){
     const s=$('atTextInput').value||'', chars=[...s.replace(/\s/g,'')].length, paras=s.trim()?s.trim().split(/\n\s*\n/).length:0, words=s.trim()?s.trim().split(/\s+/).filter(Boolean).length:0, mins=Math.max(1,Math.ceil(chars/350));
@@ -1096,6 +1258,10 @@ function setMascotStatus(text){const el=document.getElementById('mascotStatus');
   window.atDeleteCheck=function(id){write('at-offline-check-v1',read('at-offline-check-v1',[]).filter(x=>x.id!==id));renderCheck()}
 
   $('atTextInput')?.addEventListener('input',atTextStats);
+  $('atCalFood')?.addEventListener('change',atRefreshCalorieInfo);
+  $('atCalGrams')?.addEventListener('keydown',e=>{if(e.key==='Enter')atCalorieCalculate()});
+  atRefreshCalorieInfo();
+  renderCalorieList();
   $('atCalcInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')atCalc()});
   $('atCalcUnit')?.addEventListener('change',()=>atCalc());
   $('atUnitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')atConvert()}); $('atUnitFrom')?.addEventListener('change',atConvert); $('atUnitTo')?.addEventListener('change',atConvert);
