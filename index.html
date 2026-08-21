@@ -76,33 +76,6 @@
 .embedded-feature-intro h2{margin:0 0 8px;color:var(--title)}
 .embedded-feature-intro p{margin:0;line-height:1.8}
 .embedded-frame{width:100%;height:720px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}
-.food-board{background:linear-gradient(135deg,#f8f5ed,#eef1ee);border:1px solid #d6d8d2;border-radius:24px;box-shadow:var(--shadow);padding:26px;overflow:hidden}
-.food-board .boarding{position:relative;overflow:hidden;background:#fffdf7;border:1px solid #d6d8d2;border-radius:24px;box-shadow:0 12px 35px rgba(25,35,35,.10)}
-.food-board .top{padding:30px 36px 24px;border-bottom:1px dashed #aeb6b4}
-.food-board .eyebrow{letter-spacing:.22em;font-weight:800;font-size:.82rem;color:#5d6869}
-.food-board h1{margin:10px 0 4px;font-size:clamp(2.3rem,6vw,4.8rem);line-height:.95;letter-spacing:-.05em;color:#1e2728}
-.food-board .subtitle{margin:0;font-size:1.05rem;color:#687274}
-.food-board .flight{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:20px;padding:24px 36px;border-bottom:1px dashed #aeb6b4}
-.food-board .label{font-size:.72rem;font-weight:800;letter-spacing:.15em;color:#788181;margin-bottom:7px}
-.food-board .value{font-size:1.15rem;font-weight:800;color:#1e2728}
-.food-board .route{display:flex;align-items:center;gap:12px}
-.food-board .route-line{height:1px;flex:1;background:repeating-linear-gradient(to right,#1e2728 0 7px,transparent 7px 13px)}
-.food-board .details{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px 36px 24px}
-.food-board .stamp{border:1px solid #d7d9d4;border-radius:14px;padding:12px 14px;background:#fff}
-.food-board .stamp strong{display:block;font-size:.75rem;letter-spacing:.12em;color:#777}
-.food-board .stamp span{display:block;margin-top:6px;font-weight:800;color:#1e2728}
-.food-board .selector{margin-top:20px;background:rgba(255,253,247,.88);border:1px solid #d6d8d2;border-radius:22px;padding:26px}
-.food-board .selector-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}
-.food-board .selector-head h2{margin:0;font-size:1.4rem;color:#1e2728}
-.food-board .hint{margin:5px 0 0;color:#687274}
-.food-board .random{border:0;border-radius:999px;background:#1e2728;color:#fff;padding:11px 16px;cursor:pointer;font-weight:800}
-.food-board .food-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.food-board .food-card{appearance:none;text-align:left;width:100%;border:1px solid #d8dbd6;background:#fff;border-radius:18px;padding:20px;cursor:pointer;transition:.2s transform,.2s box-shadow,.2s border-color}
-.food-board .food-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(25,35,35,.08);border-color:#aeb6b4}
-.food-board .food-tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#f4e5c2;font-size:.7rem;font-weight:900;letter-spacing:.08em}
-.food-board .food-card h3{margin:13px 0 5px;font-size:1.25rem;color:#1e2728}
-.food-board .food-card p{margin:0;color:#687274;line-height:1.7}
-.food-board .food-result{margin-top:16px;min-height:54px;padding:14px 16px;border-radius:14px;background:#f3f0e7;color:#445052;display:flex;align-items:center;font-weight:700}
 @media(max-width:760px){
  .embedded-frame{height:620px}
  .food-board{padding:16px}
@@ -119,6 +92,19 @@
 .call-you-caption{font-size:15px;color:var(--muted);text-align:center}.call-you-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.call-you-actions button:disabled{opacity:.45;cursor:not-allowed}
 .call-you-transcript,.call-you-reply{width:min(100%,700px);box-sizing:border-box;border:1px solid var(--line,#e8ddd0);border-radius:14px;padding:13px 15px;background:rgba(255,255,255,.65);line-height:1.65}.call-you-transcript{color:var(--muted);font-size:13px}.call-you-reply{min-height:52px}
 @media(max-width:760px){.call-you-panel{min-height:380px;padding:20px}.call-you-actions{width:100%}.call-you-actions button{flex:1}}
+
+/* === A.T 世界三餐美食隨機選擇器 === */
+.world-food-wrap{max-width:1180px;margin:0 auto;padding:24px 22px 100px}
+.world-food-hero{display:flex;justify-content:space-between;gap:22px;align-items:flex-end;margin-bottom:18px}
+.world-food-hero h1{margin:5px 0 8px;font-size:34px}.world-food-hero p{margin:0;line-height:1.75;color:var(--muted,#6d6680)}
+.food-controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.food-controls select,.food-controls button{border:1px solid rgba(104,78,145,.18);border-radius:14px;padding:11px 14px;background:#fff;color:#3d3550;font:inherit;cursor:pointer}
+.food-controls button{background:#6f4ca8;color:#fff;border-color:#6f4ca8;font-weight:700}.food-controls button.secondary{background:#fff;color:#6f4ca8}
+.food-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.food-card{background:rgba(255,255,255,.92);border:1px solid rgba(104,78,145,.14);border-radius:22px;padding:18px;box-shadow:0 12px 30px rgba(75,48,105,.08);min-height:230px;display:flex;flex-direction:column}
+.food-card .meal{font-size:12px;letter-spacing:.12em;color:#8b6ab6;font-weight:800}.food-card h3{font-size:24px;margin:10px 0 5px;color:#342842}.food-card .country{font-weight:700;color:#655277}.food-card .desc{line-height:1.7;color:#6d6680;margin:12px 0}.food-card .tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:7px}.food-tag{font-size:12px;padding:5px 9px;border-radius:999px;background:#f1ebf8;color:#6b4b8f}.food-card.selected{outline:3px solid rgba(111,76,168,.18);transform:translateY(-2px)}
+.food-all{margin-top:18px;background:linear-gradient(135deg,#fff,#f7f1fb);border-radius:22px;padding:18px;border:1px solid rgba(104,78,145,.14)}.food-all h2{margin:0 0 10px}.food-result-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.food-result-item{padding:13px;border-radius:16px;background:#fff;border:1px solid rgba(104,78,145,.12)}.food-result-item b{display:block;margin-bottom:5px}.food-empty{color:#7b7288;padding:16px 0}
+@media(max-width:900px){.food-grid,.food-result-list{grid-template-columns:1fr}.world-food-hero{display:block}.world-food-hero h1{font-size:28px}}
+
 </style>
 <meta content="-module-removed" name="cc-removed-modules"/><style id="cc-optimization-layer">
 /* === CC Optimization Layer: brand-first, warm-pixel, no- scope === */
@@ -474,47 +460,28 @@
 </section>
 </main>
 
-<main class="page hidden" id="hungry">
-<section class="section">
-  <div class="embedded-feature-wrap">
-    <div class="embedded-feature-intro">
-      <span class="label">FOOD DECISION TOOL</span>
-      <h2>我餓了</h2>
-      <p>把「我餓了」直接整合到 A.T，讓你不用離開目前網站就能選早餐。原始功能包含日期、登機證式介面、台灣早餐、世界美食，以及隨機登機蓋章。</p>
+
+<main class="page hidden" id="world-food">
+  <div class="world-food-wrap">
+    <div class="world-food-hero">
+      <div><span class="label">WORLD FOOD RANDOMIZER</span><h1>世界三餐美食選擇器</h1><p>不知道早餐、午餐、晚餐吃什麼？A.T 會從多國料理中隨機替你選擇。一次抽三餐，或單獨重抽某一餐。</p></div>
+      <div class="feature-mode"><b>多樣化選擇</b><br>亞洲・歐洲・美洲・中東・南亞・非洲</div>
     </div>
-    <div class="food-board" aria-label="我餓了早餐選擇器">
-      <section class="boarding">
-        <div class="top">
-          <div class="eyebrow">BOARDING PASS</div>
-          <h1>我餓了</h1>
-          <p class="subtitle">今天，你要飛去哪一餐？</p>
-        </div>
-        <div class="flight">
-          <div class="field"><div class="label">DATE</div><div class="value" id="hungryDate">—</div></div>
-          <div class="field"><div class="label">FROM</div><div class="route"><div class="value">空腹</div><div class="route-line"></div><div class="value">A1</div></div></div>
-          <div class="field"><div class="label">TO</div><div class="value">飽足</div></div>
-        </div>
-        <div class="details">
-          <div class="stamp"><strong>GATE</strong><span>A1</span></div>
-          <div class="stamp"><strong>FLIGHT</strong><span>BRK-2026</span></div>
-          <div class="stamp"><strong>BOARDING TIME</strong><span>06:00 – 10:30</span></div>
-          <div class="stamp"><strong>PASSENGER</strong><span>你</span></div>
-        </div>
-      </section>
-      <section class="selector">
-        <div class="selector-head">
-          <div><h2>SELECT YOUR GATE — 選擇這一餐</h2><p class="hint">挑一個目的地，開始今天的早餐登機。</p></div>
-          <button class="random" id="hungryRandomBtn">手氣不錯・隨機登機蓋章</button>
-        </div>
-        <div class="food-cards">
-          <button class="food-card" data-hungry-choice="台灣早餐"><span class="food-tag">MAIN CABIN</span><h3>台灣・早餐</h3><p>熟悉的台灣早餐，從熱騰騰的一餐開始今天。</p></button>
-          <button class="food-card" data-hungry-choice="世界美食"><span class="food-tag">INTL TERMINAL</span><h3>世界美食・轉機櫃檯</h3><p>選一個國家，看看他們的「早餐」都吃什麼。</p></button>
-        </div>
-        <div class="food-result" id="hungryResult" role="status" aria-live="polite">護照 · 蓋章紀錄：尚未選擇目的地</div>
-      </section>
+    <div class="food-controls">
+      <select id="foodRegion"><option value="all">全部地區</option><option value="亞洲">亞洲</option><option value="歐洲">歐洲</option><option value="美洲">美洲</option><option value="中東">中東</option><option value="南亞">南亞</option><option value="非洲">非洲</option><option value="大洋洲">大洋洲</option></select>
+      <select id="foodDiet"><option value="all">全部飲食</option><option value="vegetarian">素食友善</option><option value="meat">肉類</option><option value="seafood">海鮮</option><option value="vegan">純植物</option></select>
+      <button type="button" onclick="ATFood.randomAll()">今天三餐一起抽</button>
+      <button type="button" class="secondary" onclick="ATFood.randomMeal('breakfast')">只抽早餐</button>
+      <button type="button" class="secondary" onclick="ATFood.randomMeal('lunch')">只抽午餐</button>
+      <button type="button" class="secondary" onclick="ATFood.randomMeal('dinner')">只抽晚餐</button>
     </div>
+    <div class="food-grid">
+      <article class="food-card" id="foodBreakfast"><span class="meal">BREAKFAST</span><h3>早餐</h3><div class="country">等待抽選</div><p class="desc">按下「今天三餐一起抽」開始。</p><div class="tags"></div></article>
+      <article class="food-card" id="foodLunch"><span class="meal">LUNCH</span><h3>午餐</h3><div class="country">等待抽選</div><p class="desc">你也可以只重抽午餐。</p><div class="tags"></div></article>
+      <article class="food-card" id="foodDinner"><span class="meal">DINNER</span><h3>晚餐</h3><div class="country">等待抽選</div><p class="desc">多國料理隨機搭配。</p><div class="tags"></div></article>
+    </div>
+    <section class="food-all"><h2>本次三餐結果</h2><div id="foodSummary" class="food-empty">尚未抽選</div></section>
   </div>
-</section>
 </main>
 
 <main class="page hidden" id="explore">
@@ -564,7 +531,7 @@
   </section>
 </div></main>
 </div>
-<nav aria-label="主要導覽" class="nav"><button class="active" onclick="page('home',this)">首頁</button><button onclick="page('ask',this)">提問</button><button onclick="page('chat',this)">聊天</button><button onclick="page('life',this)">生活</button><button onclick="page('feature-query',this)">特徵查詢</button><button onclick="page('call-you',this)">呼叫你</button><button onclick="page('hungry',this)">我餓了</button><button onclick="page('explore',this)">探索</button><button onclick="page('me',this)">設定</button></nav><div class="toast" id="toast"></div>
+<nav aria-label="主要導覽" class="nav"><button class="active" onclick="page('home',this)">首頁</button><button onclick="page('ask',this)">提問</button><button onclick="page('chat',this)">聊天</button><button onclick="page('life',this)">生活</button><button onclick="page('feature-query',this)">特徵查詢</button><button onclick="page('world-food',this)">世界美食</button><button onclick="page('call-you',this)">呼叫你</button><button onclick="page('explore',this)">探索</button><button onclick="page('me',this)">設定</button></nav><div class="toast" id="toast"></div>
 <script>
 const CC={
  theme(){return document.documentElement.getAttribute('data-theme')||'light'},
@@ -2212,8 +2179,6 @@ document.getElementById('atPlantSearchBtn').addEventListener('click',atRunFeatur
         <h3>二、目前新增功能介紹</h3>
         <div class="embedded-feature-intro">
           <p><strong>呼叫你：</strong>提供獨立的語音互動入口，讓你可以在 A.T 內使用「呼叫你」功能；語音能力會依瀏覽器與裝置權限而定，第一次使用時可能需要允許麥克風。</p>
-          <p style="margin-top:10px"><strong>我餓了：</strong>把「今天吃什麼」做成登機證式的小工具。你可以選擇「台灣・早餐」或「世界美食・轉機櫃檯」，也可以使用隨機登機蓋章，快速決定今天的早餐方向。</p>
-          <p class="privacy-note" style="margin-top:10px">這兩項功能現在直接嵌入 A.T 網頁中，使用者不需要另外開啟另一個 A.T 網站；「我餓了」的選擇與隨機功能在目前頁面內執行。</p>
         </div>
       </section>
       <section>
@@ -2299,54 +2264,77 @@ document.getElementById('atPlantSearchBtn').addEventListener('click',atRunFeatur
 })();
 </script>
 
-<script id="hungry-feature-runtime">
-(function(){
-  function initHungry(){
-    const pageEl=document.getElementById('hungry');
-    const dateEl=document.getElementById('hungryDate');
-    const result=document.getElementById('hungryResult');
-    const randomBtn=document.getElementById('hungryRandomBtn');
-    const cards=Array.from(document.querySelectorAll('#hungry [data-hungry-choice]'));
-    if(!pageEl||!dateEl||!result||!randomBtn||!cards.length)return false;
 
-    dateEl.textContent=new Date().toLocaleDateString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit'});
-
-    function board(choice){
-      result.textContent='護照 · 蓋章紀錄：已蓋章「'+choice+'」・祝你吃得開心！';
-      result.classList.add('is-selected');
-    }
-
-    if(!window.__hungryBound){
-      window.__hungryBound=true;
-      cards.forEach(card=>{
-        card.type='button';
-        card.addEventListener('click',function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          board(this.dataset.hungryChoice);
-        });
-      });
-      randomBtn.type='button';
-      randomBtn.addEventListener('click',function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        const pick=cards[Math.floor(Math.random()*cards.length)];
-        board(pick.dataset.hungryChoice);
-      });
-    }
-    return true;
-  }
-
-  window.initHungryFeature=initHungry;
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initHungry);
-  else initHungry();
-
-  // 保證從 A.T 導覽切換到「我餓了」時一定重新初始化。
-  const originalPage=window.page;
-  window.page=function(id,btn){
-    if(typeof originalPage==='function')originalPage(id,btn);
-    if(id==='hungry')initHungry();
-  };
+<script>
+/* === A.T 世界三餐美食隨機引擎 === */
+window.ATFood=(()=>{
+ const foods=[
+  ['breakfast','亞洲','日本','朝食定食','味噌湯、烤魚、米飯與小菜的均衡早餐',['seafood','meat']],
+  ['breakfast','亞洲','台灣','蛋餅','薄餅包蛋，可搭配玉米、起司或鮪魚',['vegetarian']],
+  ['breakfast','亞洲','香港','菠蘿包與奶茶','外酥內軟的菠蘿包搭配港式奶茶',['vegetarian']],
+  ['breakfast','亞洲','越南','越南河粉','清爽香草與熱湯的經典早餐',['meat']],
+  ['breakfast','亞洲','韓國','韓式飯捲','紫菜包飯，適合快速又有飽足感的早餐',['vegetarian']],
+  ['breakfast','南亞','印度','Masala Dosa','香脆薄餅搭配扁豆咖哩與椰子醬',['vegetarian','vegan']],
+  ['breakfast','中東','黎巴嫩','Shakshuka','番茄燉蛋搭配麵包與香料',['vegetarian']],
+  ['breakfast','歐洲','法國','可頌早餐盤','可頌、果醬、水果與咖啡的簡單組合',['vegetarian']],
+  ['breakfast','歐洲','西班牙','Tostada con Tomate','番茄橄欖油烤麵包，鹹香清爽',['vegan']],
+  ['breakfast','歐洲','英國','英式早餐','蛋、烤豆、番茄、蘑菇與吐司的豐盛早餐',['vegetarian']],
+  ['breakfast','美洲','美國','Pancakes','鬆餅搭配水果與楓糖漿',['vegetarian']],
+  ['breakfast','美洲','墨西哥','Huevos Rancheros','農場風煎蛋配豆泥、莎莎與玉米餅',['vegetarian']],
+  ['breakfast','大洋洲','澳洲','Avocado Toast','酪梨吐司搭配蛋與檸檬胡椒',['vegetarian']],
+  ['breakfast','非洲','摩洛哥','Msemen','層次酥香的摩洛哥煎餅，可配蜂蜜或鹹味醬料',['vegetarian']] ,
+  ['breakfast','非洲','埃及','Ful Medames','慢燉蠶豆搭配橄欖油、檸檬與香草',['vegan']],
+  ['lunch','亞洲','日本','拉麵','濃郁湯頭搭配麵條、蔬菜與肉類或海鮮',['meat','seafood']],
+  ['lunch','亞洲','泰國','Pad Thai','酸甜鹹香的炒米粉搭配花生與豆芽',['vegetarian','seafood']],
+  ['lunch','亞洲','越南','Bún Chả','炭烤豬肉搭配米線、香草與魚露醬汁',['meat']],
+  ['lunch','亞洲','新加坡','海南雞飯','嫩雞、香米與醬料的經典組合',['meat']],
+  ['lunch','亞洲','印尼','Nasi Goreng','印尼炒飯搭配蛋、蔬菜與香料',['vegetarian','meat']],
+  ['lunch','亞洲','中國','麻婆豆腐','豆腐與香辣豆瓣醬的四川風味料理',['vegetarian']],
+  ['lunch','亞洲','台灣','牛肉麵','紅燒湯頭、牛肉與麵條的台灣代表料理',['meat']],
+  ['lunch','南亞','印度','Butter Chicken','香料番茄奶油醬搭配嫩雞與烤餅',['meat']],
+  ['lunch','南亞','印度','Chana Masala','香料鷹嘴豆咖哩搭配米飯或烤餅',['vegan']],
+  ['lunch','中東','土耳其','Döner Kebab','香料烤肉搭配麵餅、沙拉與醬料',['meat']],
+  ['lunch','中東','以色列','Falafel Pita','鷹嘴豆炸丸子、蔬菜與芝麻醬塞入皮塔餅',['vegan']],
+  ['lunch','歐洲','義大利','Carbonara','蛋、起司與培根拌成濃郁義大利麵',['meat']],
+  ['lunch','歐洲','希臘','Greek Salad','番茄、黃瓜、橄欖與菲達起司的清爽沙拉',['vegetarian']],
+  ['lunch','歐洲','西班牙','Paella','藏紅花海鮮飯，亦有雞肉或蔬食版本',['seafood','meat']],
+  ['lunch','歐洲','匈牙利','Goulash','紅椒香料燉牛肉，溫暖濃郁',['meat']],
+  ['lunch','美洲','美國','Mac and Cheese','濃郁起司通心粉，簡單又療癒',['vegetarian']],
+  ['lunch','美洲','墨西哥','Tacos','玉米餅搭配肉類、豆類、莎莎與香草',['meat','vegan']],
+  ['lunch','美洲','巴西','Feijoada','黑豆燉肉搭配米飯與配菜',['meat']],
+  ['lunch','美洲','秘魯','Ceviche','檸檬醃魚搭配洋蔥、辣椒與香草',['seafood']],
+  ['lunch','非洲','摩洛哥','Tagine','香料燉肉或蔬菜，以陶鍋慢燉',['meat','vegan']],
+  ['lunch','非洲','衣索比亞','Vegetable Injera','發酵酸香薄餅搭配多種香料蔬菜燉菜',['vegan']],
+  ['dinner','亞洲','韓國','韓式烤肉','桌邊烤肉搭配生菜、泡菜與多種小菜',['meat']],
+  ['dinner','亞洲','日本','壽喜燒','薄牛肉與蔬菜在甜鹹醬汁中涮煮',['meat']],
+  ['dinner','亞洲','台灣','三杯雞','麻油、醬油與九層塔打造濃郁香氣',['meat']],
+  ['dinner','亞洲','菲律賓','Chicken Adobo','醋、醬油與蒜頭燉煮的經典雞肉料理',['meat']],
+  ['dinner','亞洲','馬來西亞','Laksa','辛香椰奶湯麵，可搭配海鮮或雞肉',['seafood','meat']],
+  ['dinner','南亞','印度','Biryani','香料長米與肉類或蔬菜層層燜煮',['meat','vegetarian']],
+  ['dinner','南亞','尼泊爾','Momo','香料肉餡或蔬菜蒸餃搭配沾醬',['meat','vegetarian']],
+  ['dinner','中東','黎巴嫩','Mixed Grill','多種香料烤肉搭配沙拉、醬料與麵包',['meat']],
+  ['dinner','中東','伊朗','Ghormeh Sabzi','香草、豆類與牛羊肉慢燉的伊朗家常菜',['meat']],
+  ['dinner','歐洲','義大利','Pizza Napoletana','番茄、莫札瑞拉與羅勒的那不勒斯披薩',['vegetarian']],
+  ['dinner','歐洲','法國','Coq au Vin','紅酒燉雞搭配洋蔥與香草',['meat']],
+  ['dinner','歐洲','葡萄牙','Bacalhau','鹽漬鱈魚搭配馬鈴薯與橄欖油',['seafood']],
+  ['dinner','歐洲','德國','Schnitzel','香脆炸肉排搭配馬鈴薯與沙拉',['meat']],
+  ['dinner','美洲','美國','BBQ Ribs','慢烤豬肋排搭配煙燻醬汁與配菜',['meat']],
+  ['dinner','美洲','墨西哥','Enchiladas','玉米餅包餡後淋醬烘烤，香辣濃郁',['meat','vegetarian']],
+  ['dinner','美洲','阿根廷','Empanadas','酥皮或麵皮包肉、起司或蔬菜的烤餃',['meat','vegetarian']],
+  ['dinner','美洲','智利','Pastel de Choclo','玉米泥覆蓋肉餡烘烤的家常料理',['meat']],
+  ['dinner','非洲','南非','Bobotie','香料肉餡覆蓋蛋奶層烘烤，酸甜辛香',['meat']],
+  ['dinner','非洲','埃及','Koshari','米飯、扁豆、通心粉、鷹嘴豆與番茄醬的街頭主食',['vegan']],
+  ['dinner','大洋洲','澳洲','Meat Pie','酥皮包裹濃郁肉餡的經典澳洲派',['meat']],
+  ['dinner','大洋洲','紐西蘭','Hāngi風味餐','以地熱蒸煮方式呈現肉類與根莖蔬菜的傳統餐食',['meat']] 
+ ].map(x=>({meal:x[0],region:x[1],country:x[2],name:x[3],desc:x[4],diet:x[5]}));
+ const state={breakfast:null,lunch:null,dinner:null};
+ const getPool=(meal)=>{const r=document.getElementById('foodRegion')?.value||'all',d=document.getElementById('foodDiet')?.value||'all';return foods.filter(f=>f.meal===meal&&(r==='all'||f.region===r)&&(d==='all'||f.diet.includes(d)|| (d==='vegetarian'&&f.diet.includes('vegetarian'))));};
+ const pick=meal=>{const pool=getPool(meal);if(!pool.length){alert('目前條件沒有符合的料理，請換一個地區或飲食選項。');return null}let item=pool[Math.floor(Math.random()*pool.length)];if(pool.length>1&&state[meal]?.name===item.name)item=pool[(pool.indexOf(item)+1)%pool.length];state[meal]=item;render(meal);renderSummary();return item;};
+ const render=meal=>{const el=document.getElementById('food'+meal[0].toUpperCase()+meal.slice(1));if(!el||!state[meal])return;const f=state[meal];el.classList.add('selected');el.querySelector('h3').textContent=f.name;el.querySelector('.country').textContent=f.country+'・'+f.region;el.querySelector('.desc').textContent=f.desc;el.querySelector('.tags').innerHTML=f.diet.map(d=>'<span class="food-tag">'+(d==='vegetarian'?'素食友善':d==='vegan'?'純植物':d==='seafood'?'海鮮':'肉類')+'</span>').join('');};
+ const renderSummary=()=>{const el=document.getElementById('foodSummary');const arr=[['早餐',state.breakfast],['午餐',state.lunch],['晚餐',state.dinner]].filter(x=>x[1]);el.innerHTML=arr.length?'<div class="food-result-list">'+arr.map(x=>'<div class="food-result-item"><b>'+x[0]+'｜'+x[1].name+'</b><span>'+x[1].country+'・'+x[1].region+'｜'+x[1].desc+'</span></div>').join('')+'</div>':'尚未抽選';};
+ return {randomMeal:pick,randomAll(){['breakfast','lunch','dinner'].forEach(pick)},init(){renderSummary()}};
 })();
+document.addEventListener('DOMContentLoaded',()=>ATFood.init());
 </script>
+
 </body></html>
